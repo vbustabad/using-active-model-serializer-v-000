@@ -3,18 +3,16 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    render json: @posts, status: 200
     respond_to do |format|
      format.html { render :index }
-     format.json { render json: @post }
+     format.json { render json: @posts, status: 200 }
     end
   end
 
   def show
-    render json: @post, status: 200
     respond_to do |format|
      format.html { render :show }
-     format.json { render json: @post }
+     format.json { render json: @post, status: 200 }
     end
   end
 
